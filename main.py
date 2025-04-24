@@ -44,7 +44,10 @@ st.table(tmp_df.head())
 
 
 # 2. multi select
-# 여러개 선택할 수 있을를 선택해 주세요. 복수선택가능',
+# 여러개 선택할 수 있을 때는 multiselect를 이용하실 수 있습니다 
+# return : list
+select_multi_species = st.sidebar.multiselect(
+    '확인하고자 하는 종을 선택해 주세요. 복수선택가능',
     ['setosa','versicolor','virginica']
 
 )
