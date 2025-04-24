@@ -4,6 +4,8 @@ from sklearn.datasets import load_iris
 import matplotlib.pyplot as plt
 import streamlit as st
 
+st.title('iris data')
+
 iris_dataset = load_iris()
 
 df= pd.DataFrame(data=iris_dataset.data,columns= iris_dataset.feature_names)
