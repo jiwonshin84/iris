@@ -7,7 +7,7 @@ import streamlit as st
 st.title('Iris data')
 
 iris_dataset = load_iris()
-
+'''
 df= pd.DataFrame(data=iris_dataset.data,columns= iris_dataset.feature_names)
 df.columns= [ col_name.split(' (cm)')[0] for col_name in df.columns] # 컬럼명을 뒤에 cm 제거하였습니다
 df['species']= iris_dataset.target 
@@ -25,7 +25,7 @@ st.table(df.head())
 
 st.subheader('this is data frame')
 st.dataframe(df.head())
-
+'''
 
 
 # 1. Select Box
