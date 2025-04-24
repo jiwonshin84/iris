@@ -4,18 +4,7 @@ from sklearn.datasets import load_iris
 import matplotlib.pyplot as plt
 import streamlit as st
 
-st.title('iris data')
-
-menu = ['Home', 'EDA', 'ML', 'About']
-choice = st.sidebar.selectbox("Menu",menu)
-  if choice == 'Home' :
-    st.subheader('Home')
-  elif choice == 'EDA' :
-    st.subheader('EDA')
-  elif choice == 'ML' :
-    st.subheader('ML')
-  else:
-    st.subheader('About')
+st.title('Iris data')
 
 iris_dataset = load_iris()
 
@@ -36,3 +25,19 @@ st.table(df.head())
 
 st.subheader('this is data frame')
 st.dataframe(df.head())
+
+
+
+
+# 사이드바에 select box를 활용하여 종을 선택한 다음 그에 해당하는 행만 추출하여 데이터프레임을 만들고자합니다.
+st.sidebar.title('Iris Species🌸')
+
+# select_species 변수에 사용자가 선택한 값이 지정됩니다
+select_species = st.sidebar.selectbox(
+    '확인하고 싶은 종을 선택하세요',
+    ['setosa','versicolor','virginica']
+)
+# 원래 dataframe으로 부터 꽃의 종류가 선택한 종류들만 필터링 되어서 나오게 일시적인 dataframe을 생성합니다
+tmp_df = df[df['species']== select_species]
+# 선택한 종의 맨 처음 5행을 보여줍니다 
+st.table(tmp_df.head())
