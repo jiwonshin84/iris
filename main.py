@@ -34,20 +34,13 @@ st.sidebar.title('Iris Species🌸')
 
 # select_species 변수에 사용자가 선택한 값이 지정됩니다
 select_species = st.sidebar.selectbox(
-    '확인하고 싶은 종을 선택하세요',
+    '확인하고 싶은 붓꽃 종류을 선택하세요',
     ['setosa','versicolor','virginica']
 )
 # 원래 dataframe으로 부터 꽃의 종류가 선택한 종류들만 필터링 되어서 나오게 일시적인 dataframe을 생성합니다
 tmp_df = df[df['species']== select_species]
 # 선택한 종의 맨 처음 5행을 보여줍니다 
-st.table(tmp_df.head())
-
-
-# 2. multi select
-# 여러개 선택할 수 있을 때는 multiselect를 이용하실 수 있습니다 
-# return : list
-select_multi_species = st.sidebar.multiselect(
-    '확인하고자 하는 종을 선택해 주세요. 복수선택가능',
+st.table(t류을 선택해 주세요. 복수선택가능',
     ['setosa','versicolor','virginica']
 
 )
